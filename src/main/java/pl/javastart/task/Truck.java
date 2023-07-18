@@ -1,6 +1,7 @@
 package pl.javastart.task;
 
 public class Truck extends Car {
+    private static final double ADDITIONAL_FUEL_TRUCK_USAGE_WITH_AIR_CONDITIONER = 1.6;
     private static final double ADDITIONAL_FUEL_USAGE_FOR_LOAD = 0.5;
     private double loadWeight;
 
@@ -13,7 +14,7 @@ public class Truck extends Car {
     protected double getFinalFuelUsage() {
         double fuelUsageWithLoad = ADDITIONAL_FUEL_USAGE_FOR_LOAD * loadWeight / PER_100;
         if (isAirConditionerOn) {
-            return avgFuelUsage + fuelUsageWithLoad + ADDITIONAL_FUEL_USAGE_WITH_AIR_CONDITIONER;
+            return avgFuelUsage + fuelUsageWithLoad + ADDITIONAL_FUEL_TRUCK_USAGE_WITH_AIR_CONDITIONER;
         }
         return avgFuelUsage + fuelUsageWithLoad;
     }
